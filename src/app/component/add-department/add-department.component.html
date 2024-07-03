@@ -1,0 +1,26 @@
+<h2>Add Employee</h2>
+<p>{{department|json}}</p>
+
+<form class="form" #f1="ngForm">
+    <div class="form-group">
+        <label for='name'>Department_Name</label>
+        <input type='text' id='name' class='form-control' #name="ngModel" required minlength='3' maxlength='15'
+            name='empname' [(ngModel)]='department.departmentName'>
+        <div class='err' *ngIf="name.dirty && name.invalid">
+            <div>Name is required</div>
+            <div>Minimum length 3 chars</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for='departmentLocation'>Department_Location</label>
+        <input type='text' id='departmentLocation' class='form-control' 
+        #departmentLocation='ngModel' required name='departmentLocation' [(ngModel)]='department.departmentLocation'>
+        <div class='err' *ngIf="departmentLocation.dirty && departmentLocation.invalid">
+            <div>Address is required</div>
+        </div>
+
+    </div>
+    <br><br>
+        <button type='submit' class="btn btn-{{f1.invalid?'danger':'primary'}}" [disabled]='f1.invalid'
+            (click)="addDepartment()">Submit</button>
+</form>

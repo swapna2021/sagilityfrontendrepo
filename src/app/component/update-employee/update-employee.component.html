@@ -1,0 +1,20 @@
+ 
+<form [formGroup]="employeeForm">
+    <div class="form-group">
+        <label>Employee_Name</label>
+        <input class='form-control' formControlName='name'>
+        <label>Employee_DOB</label>
+        <input class='form-control' formControlName='dob'>
+        <label>Employee_Phone</label>
+        <input class='form-control' formControlName='phone'>
+        <label>Employee_Email</label>
+        <input class='form-control' formControlName='email'>
+        <label>Employee_Address</label>
+        <input class='form-control' formControlName='address'>
+        <label>Employee_Salary</label>
+        <input class='form-control' formControlName='salary'>
+    </div>
+    <button [disabled]='employeeForm.invalid' class="btn btn-{{employeeForm.valid?'danger':'primary'}}" 
+    (click)='saveChanges()'>Save</button>
+    </form>
+    

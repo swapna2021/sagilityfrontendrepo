@@ -1,0 +1,36 @@
+{
+  "employees": [
+    {
+      "name": "Swapna Motupall",
+      "dob": "1981-06-26",
+      "phone": "6281614948",
+      "email": "swapna.motupally@gmail.com",
+      "address": "3-125/87/196",
+      "id": 1
+    },
+    {
+      "name": "Vikky",
+      "dob": "2007-05-21",
+      "phone": "6281614948",
+      "email": "vikky@gmail.com",
+      "address": "3-125/87/196",
+      "id": 3
+    },
+    {
+      "name": "raja",
+      "dob": "1976-08-16",
+      "phone": "1236985478",
+      "email": "raja@gmail.com",
+      "address": "Hyderabad",
+      "id": 4
+    },
+    {
+      "name": "Vikram",
+      "dob": "2007-05-21",
+      "phone": "6261814948",
+      "email": "vikram@gmail.com",
+      "address": "Hyderabad",
+      "id": 5
+    }
+  ]
+}

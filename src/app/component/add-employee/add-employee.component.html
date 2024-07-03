@@ -1,0 +1,99 @@
+<h2>Add Employee</h2>
+<p>{{employee|json}}</p>
+
+<form class="form" #f1="ngForm">
+    <div class="form-group">
+        <label for='name'>Employee_Name</label>
+        <input type='text' id='name' class='form-control' #name="ngModel" required minlength='3' maxlength='15'
+            name='empname' [(ngModel)]='employee.name'>
+        <div class='err' *ngIf="name.dirty && name.invalid">
+            <div>Name is required</div>
+            <div>Minimum length 3 chars</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for='dob'>Employee_DOB (YYYY-MM-DD)</label>
+        <input type='text' id='name' class='form-control' name='dob' [(ngModel)]='employee.dob'>
+
+    </div>
+    <div class="form-group">
+        <label for='phone'>Employee_Phone</label>
+        <input type='text' id='name' class='form-control' #phone='ngModel' required pattern="\d{10}" name='phone'
+            [(ngModel)]='employee.phone'>
+        <div class='err' *ngIf="phone.dirty && phone.invalid">
+            <div>Phone number is required</div>
+            <div>Phone number must be of 10 digits</div>
+        </div>
+    </div>
+        <div class="form-group">
+            <label for='email'>Employee_Email</label>
+            <input type='text' id='email' class='form-control' #email='ngModel' required name='email' pattern="[a-zA-Z][a-zA-Z0-9]*@[a-zA-z]+.[a-zA-Z]*"
+                [(ngModel)]='employee.email'>
+            <div class='err' *ngIf="email.dirty && email.invalid">
+                <div>email is required</div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='address'>Employee_Address</label>
+            <input type='text' id='address' class='form-control' 
+            #address='ngModel' required name='address' [(ngModel)]='employee.address'>
+            <div class='err' *ngIf="address.dirty && address.invalid">
+                <div>Address is required</div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for='salary'>Employee_Salary</label>
+            <input type='number' id='salary' class='form-control' 
+            #salary='ngModel' required name='salary' [(ngModel)]='employee.salary'>
+            <div class='err' *ngIf="salary.dirty&&salary.invalid">
+                <div>Salary is required</div>
+            </div>
+            
+        </div>
+
+        <!-- <div class="form-group">
+            <label for='department'>Employee_Department</label>
+            <input type='number' id='department' class='form-control' 
+            #department='ngModel' required name='department' [(ngModel)]='employee.department'>
+            <div class='err' *ngIf="department.dirty&&department.invalid">
+                <div>Department is required</div>
+            </div> -->
+            
+        <!-- </div> -->
+
+        <div class="form-group">
+            <label for='did'>Department Id</label>
+            <input type='number' id='did' class='form-control' 
+            #did='ngModel' required name='did' [(ngModel)]='employee.department.departmentId'>
+            <div class='err' *ngIf="did.dirty&&did.invalid">
+                <div>Department id is required</div>
+            </div>
+            
+        </div>
+       <div class="form-group">
+            <label for='dname'>Department Name</label>
+            <input type='text' id='dname' class='form-control' 
+            #dname='ngModel' required name='did' [(ngModel)]='employee.department.departmentName'>
+            <div class='err' *ngIf="dname.dirty&&dname.invalid">
+                <div>Department name is required</div>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label for='dloc'>Department Location</label>
+            <input type='text' id='dloc' class='form-control' 
+            #dloc='ngModel' required name='dloc' [(ngModel)]='employee.department.departmentLocation'>
+            <div class='err' *ngIf="dloc.dirty&&dloc.invalid">
+                <div>Department location is required</div>
+            </div>
+            
+        </div>
+        
+        <br><br>
+        <button type='submit' class="btn btn-{{f1.invalid?'danger':'primary'}}" [disabled]='f1.invalid'
+            (click)="addEmployee()">Submit</button>
+</form>

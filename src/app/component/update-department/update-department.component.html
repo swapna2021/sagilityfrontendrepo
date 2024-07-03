@@ -1,0 +1,11 @@
+<form [formGroup]="departmentForm">
+    <div class="form-group">
+        <label>Department_Name</label>
+        <input class='form-control' formControlName='name'>
+        <label>Department_Location</label>
+        <input class='form-control' formControlName='location'>
+    </div>
+    <button [disabled]='departmentForm.invalid' class="btn btn-{{departmentForm.valid?'danger':'primary'}}" 
+    (click)='saveChanges()'>Save</button>
+    </form>
+    

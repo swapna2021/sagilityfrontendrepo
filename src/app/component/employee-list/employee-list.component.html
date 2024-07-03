@@ -1,0 +1,28 @@
+<h2>Employee List</h2>
+<hr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Employee_Id</th>
+            <th>Employee_Name</th>
+            <th>Employee_Salary</th>
+            <!-- <th>Department_Id</th> -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let e of employees'>
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.salary}}</td>
+            <!-- <td>{{e.department.departmentId}}</td> -->
+            <td>
+                <button class="btn btn-success" [routerLink]="['/employee-details',e.id]">Employee_Info</button>
+                &nbsp;&nbsp;<button class="btn btn-info" [routerLink]="['/update-employee',e.id]">Edit</button>
+                &nbsp;&nbsp;<button class="btn btn-danger" (click)="deleteEmployee(e.id)">Delete</button>
+                &nbsp;&nbsp;<button class="btn btn-primary" (click)="calculateSalary(e.id)">NetSalary</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

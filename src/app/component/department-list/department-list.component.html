@@ -1,0 +1,26 @@
+<h2>Department List</h2>
+<hr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Department_Id</th>
+            <th>Department_Name</th>
+            <th>Department_Location</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let d of departments'>
+            <td>{{d.departmentId}}</td>
+            <td>{{d.departmentName}}</td>
+            <td>{{d.departmentLocation}}</td>
+            <td>
+               
+                &nbsp;&nbsp;<button class="btn btn-info" [routerLink]="['/update-department',d.departmentId]">Edit</button>
+                &nbsp;&nbsp;<button class="btn btn-danger" (click)="deleteDepartment(d.departmentId)">Delete</button>
+               
+            </td>
+        </tr>
+
+    </tbody>
+</table>
