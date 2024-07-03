@@ -1,5 +1,5 @@
 import { Department } from "./deartment";
-
+//it is employee model class
 export class Employee {
 id !: number;
 name! : string;
